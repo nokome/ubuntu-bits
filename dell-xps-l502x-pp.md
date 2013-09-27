@@ -1,8 +1,8 @@
-# Ubuntu Precise Pangolin (12.04.3) setup on my Dell XPS L502X
+## Ubuntu Precise Pangolin (12.04.3) setup on my Dell XPS L502X
 
 A useful guide is for this setup is available [here](http://hanynowsky.wordpress.com/2012/04/07/dell-xps-15-l502x-ubuntu-linux/)
 
-## Install
+### Install
 
 Install of 12.04.3 64 bit from USB stick, noting:
 
