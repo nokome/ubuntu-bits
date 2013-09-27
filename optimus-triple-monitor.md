@@ -7,8 +7,8 @@ Nvidia Optimus technology via [Bumblebee](http://bumblebee-project.org/) and
 [hybrid-screenclone](https://github.com/liskin/hybrid-screenclone)
 
 The best guide's I found for this were [Sagar's](http://sagark.org/optimal-ubuntu-graphics-setup-for-thinkpads/) 
-and [Gordin's](http://blog.gordin.de/post/optimus-guide). 
-Below I repeate their suggestions, with any minor modifications that I had to make.
+and [Gordin's](http://blog.gordin.de/post/optimus-guide). Thanks! 
+Below I mostly repeat their instructions with any minor modifications that I had to make.
 
 ## Install Bumblebee
 
