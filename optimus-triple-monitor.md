@@ -16,22 +16,25 @@ Below I mostly repeat their instructions with any minor modifications that I had
 sudo add-apt-repository ppa:bumblebee/stable
 sudo apt-get update
 sudo apt-get install bumblebee bumblebee-nvidia
+sudo reboot
 ```
-
-Reboot
 
 ### Patch `xserver-xorg-video-intel`
 
 Apply [liskin's patch](https://github.com/liskin/patches/blob/master/hacks/xserver-xorg-video-intel-2.18.0_virtual_crtc.patch) 
-so that the Intel Graphics Driver supports a VIRTUAL display which will be `screenclone`d to the NVidia card.
+so that the Intel Graphics Driver supports a VIRTUAL display which will be `screenclone`'d to the NVidia card.
 
 ```sh
 sudo apt-get build-dep xserver-xorg-video-intel
 sudo apt-get source xserver-xorg-video-intel
-
+cd xserver-xorg
+wget https://raw.github.com/liskin/patches/master/hacks/xserver-xorg-video-intel-2.18.0_virtual_crtc.patch
+patch -p1 < xserver-xorg-video-intel-2.18.0_virtual_crtc.patch
+sudo dpkg-buildpackage -b
+cd ..
+sudo dpkg --install xserver-xorg-video-intel_2.17.0-1ubuntu4_amd64.deb
+sudo reboot
 ```
-
-Reboot
 
 ### Check that Intel driver has been patched
 
