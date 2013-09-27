@@ -27,12 +27,12 @@ so that the Intel Graphics Driver supports a VIRTUAL display which will be `scre
 ```sh
 sudo apt-get build-dep xserver-xorg-video-intel
 sudo apt-get source xserver-xorg-video-intel
-cd xserver-xorg
-wget https://raw.github.com/liskin/patches/master/hacks/xserver-xorg-video-intel-2.18.0_virtual_crtc.patch
-patch -p1 < xserver-xorg-video-intel-2.18.0_virtual_crtc.patch
+cd xserver-xorg-video-intel-2.17.0
+sudo wget https://raw.github.com/liskin/patches/master/hacks/xserver-xorg-video-intel-2.18.0_virtual_crtc.patch
+sudo patch -p1 < xserver-xorg-video-intel-2.18.0_virtual_crtc.patch
 sudo dpkg-buildpackage -b
 cd ..
-sudo dpkg --install xserver-xorg-video-intel_2.17.0-1ubuntu4_amd64.deb
+sudo dpkg --install xserver-xorg-video-intel_2.17.0-1ubuntu4.4_amd64.deb
 sudo reboot
 ```
 
