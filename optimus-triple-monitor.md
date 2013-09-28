@@ -24,7 +24,7 @@ sudo reboot
 Apply [liskin's patch](https://github.com/liskin/patches/blob/master/hacks/xserver-xorg-video-intel-2.18.0_virtual_crtc.patch) 
 so that the Intel Graphics Driver supports a VIRTUAL display which will be `screenclone`'d to the NVidia card.
 
-I found I had to use updated version of `xserver-xorg-video-intel` from `ubuntu-x-swat` to avoind a freeze on boot so 
+I found I had to use updated version of `xserver-xorg-video-intel` from `ubuntu-x-swat` to avoid a freeze on boot so 
 I did this first.
 
 ```sh
@@ -34,6 +34,7 @@ sudo apt-get upgrade
 ```
 
 Then carry on...
+
 ```sh
 sudo apt-get build-dep xserver-xorg-video-intel
 sudo apt-get source xserver-xorg-video-intel
@@ -72,6 +73,8 @@ sudo rm /etc/X11/xorg.conf
 ```sh
 sudo nano /etc/bumblebee/bumblebee.conf
 ```
+
+with these changes...
 
 ```
 Driver=nvidia
