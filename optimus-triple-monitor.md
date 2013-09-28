@@ -24,6 +24,16 @@ sudo reboot
 Apply [liskin's patch](https://github.com/liskin/patches/blob/master/hacks/xserver-xorg-video-intel-2.18.0_virtual_crtc.patch) 
 so that the Intel Graphics Driver supports a VIRTUAL display which will be `screenclone`'d to the NVidia card.
 
+I found I had to use updated version of `xserver-xorg-video-intel` from `ubuntu-x-swat` to avoind a freeze on boot so 
+I did this first.
+
+```sh
+sudo add-apt-repository ppa:ubuntu-x-swat/x-updates
+sudo apt-get update
+sudo apt-get upgrade
+```
+
+Then carry on...
 ```sh
 sudo apt-get build-dep xserver-xorg-video-intel
 sudo apt-get source xserver-xorg-video-intel
@@ -32,15 +42,8 @@ sudo wget https://raw.github.com/liskin/patches/master/hacks/xserver-xorg-video-
 sudo patch -p1 < xserver-xorg-video-intel-2.18.0_virtual_crtc.patch
 sudo dpkg-buildpackage -b
 cd ..
-sudo dpkg --install xserver-xorg-video-intel_2.17.0-1ubuntu4.4_amd64.deb
+sudo dpkg --install xserver-xorg-video-intel_2.19.0-0ubuntu1~xup1_amd64.deb
 sudo reboot
-```
-
-```sh
-sudo add-apt-repository ppa:ubuntu-x-swat/x-updates
-sudo apt-get update
-sudo apt-get upgrade
-sudo apt-get source xserver-xorg-video-intel=2:2.17.0-1ubuntu4
 ```
 
 ### Check that Intel driver has been patched
@@ -54,6 +57,7 @@ xrandr
 ### Install `hybrid-screenclone`
 
 ```sh
+sudo apt-get install git xorg-dev
 git clone git://github.com/liskin/hybrid-screenclone.git
 cd hybrid-screenclone
 sudo make
