@@ -24,8 +24,9 @@ sudo reboot
 Apply [liskin's patch](https://github.com/liskin/patches/blob/master/hacks/xserver-xorg-video-intel-2.18.0_virtual_crtc.patch) 
 so that the Intel Graphics Driver supports a VIRTUAL display which will be `screenclone`'d to the NVidia card.
 
-I found I had to use updated version of `xserver-xorg-video-intel` from `ubuntu-x-swat` to avoid a freeze on boot so 
-I did this first.
+Initially when I applied this patch (doing the commands below) my system hung on reboot.
+I found I had to use updated version (2.19.0 instead of 2.17.4) of `xserver-xorg-video-intel` 
+from `ubuntu-x-swat` to avoid this...
 
 ```sh
 sudo add-apt-repository ppa:ubuntu-x-swat/x-updates
@@ -83,4 +84,25 @@ PMMethod=none
 ```
 
 
+### Run `xrandr`, `optirun` and `screenclone` to get triple monitors
 
+@todo cvrt Modeline thing
+@todo Put into a script
+
+```sh
+xrandr --output LVDS1 --auto \
+       --output HDMI1 --mode 1920x1080 --right-of LVDS1 \
+       --output VIRTUAL --mode 2980x1080 --right-of HDMI1
+optirun screenclone -d :8 -x 2
+```
+
+### Hold `xserver-xorg-video-intel`
+
+Hold the xserver-xorg-video-intel package so that the patched version does not get updated over
+
+```sh
+sudo -s
+echo xserver-xorg-video-intel hold | dpkg --set-selections
+sudo apt-get update
+sudo apt-get upgrade
+```
