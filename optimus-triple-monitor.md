@@ -36,6 +36,13 @@ sudo dpkg --install xserver-xorg-video-intel_2.17.0-1ubuntu4.4_amd64.deb
 sudo reboot
 ```
 
+```sh
+sudo add-apt-repository ppa:ubuntu-x-swat/x-updates
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get source xserver-xorg-video-intel=2:2.17.0-1ubuntu4
+```
+
 ### Check that Intel driver has been patched
 
 When you run the following command you should see two displays listed, one of them will be named VIRTUAL.
