@@ -107,7 +107,12 @@ Because many of my collegues use Office and LibreOffice doesn't always play nice
 sudo apt-get install wine
 ```
 
-Put in the Office CD-ROM and install the applications required.
+Put in the Office CD-ROM, then to [ensure 32-bit WINE installation](http://appdb.winehq.org/objectManager.php?sClass=version&iId=4992)
+
+```sh
+WINEARCH=win32 WINEPREFIX=/home/nbentley/.wine32 winecfg
+WINEARCH=win32 WINEPREFIX=/home/nbentley/.wine32 wine /media/OFFICE12/setup.exe
+```
 
 
 
