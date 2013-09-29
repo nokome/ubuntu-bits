@@ -100,19 +100,19 @@ navigation. It's hopefully just a temporary hack:
 
 ```sh
 # Create a mode for an extra wide VIRTUAL screen
-modeline=`cvt 2980 1080 | sed "1d" | sed 's/Modeline //'`
+modeline=`cvt 2972 1080 | sed "1d" | sed 's/Modeline //'`
 modename=`echo $modeline | sed 's/ .*//'`
 # Create the mode (ignoring xrandr error if the mode is already there)
 xrandr --newmode $modeline &> /dev/null 2>&1
 # Add the mode to VIRTUAL
-xrandr --addmode VIRTUAL $mode
+xrandr --addmode VIRTUAL $modename
 
 # Configure screen size and placements
 # Note that on the XPS L502X, HDMI1 is actually the DisplayPort output and
 # VIRTUAL is the HDMI output
 xrandr --output LVDS1 --auto \
-       --output HDMI1 --mode 1920x1080 --right-of LVDS1 \
-       --output VIRTUAL --mode $modename --right-of HDMI1
+       --output HDMI1 --mode 1920x1080 --left-of LVDS1 \
+       --output VIRTUAL --mode $modename --left-of HDMI1
        
 # Run screen clone using the Bumblebee client `optirun`
 optirun screenclone -d :8 -x 2
