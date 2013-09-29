@@ -99,9 +99,9 @@ cd SublimeLinter
 git checkout sublime-text-3
 ```
 
-### Install WINE and Microsoft Office
+### Install WINE and Microsoft Office 2007
 
-Because many of my collegues use Office and LibreOffice doesn't always play nice.
+Because many of my collegues use Office and LibreOffice doesn't always play nice, particularly with formatting
 
 ```sh
 sudo apt-get install wine
@@ -113,7 +113,7 @@ Put in the Office CD-ROM, then to [ensure 32-bit WINE installation](http://appdb
 WINEARCH=win32 WINEPREFIX=/home/nbentley/.wine32 winecfg
 WINEARCH=win32 WINEPREFIX=/home/nbentley/.wine32 wine /media/OFFICE12/setup.exe
 ```
-
+See the "Post Installation Instructions" at http://appdb.winehq.org/objectManager.php?sClass=version&iId=4992
 
 
 
