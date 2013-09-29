@@ -41,18 +41,22 @@ Because it's good to see where your computer is at...
 
 ```sh
 sudo apt-get install indicator-multiload
+```
 
+```sh
 sudo add-apt-repository ppa:alexmurray/indicator-sensors
 sudo apt-get update
 sudo apt-get install indicator-sensors
 ```
+
+Go to the HUD and launch sensors and then check preference to autostart.
 
 ### Install password storage
 
 Because these days, without passwords, you can't do much...
 
 ```sh
-sudo apt-get install keepass2 
+sudo apt-get install keepassx 
 ```
 
 ### Install Last.fm palyer
@@ -60,16 +64,51 @@ sudo apt-get install keepass2
 Because I like listening to music while I work...
 
 ```sh
-sudo /etc/sources.list
-deb http://apt.last.fm/debian precise main
+sudo add-apt-repository "deb http://apt.last.fm/debian precise main"
 sudo apt-get update
 sudo apt-get install lastfm-scrobbler
 ```
 
-### Install development tools
+### Install Sublime Text
 
+Because its, ahh, sublime...
+
+```sh
+sudo add-apt-repository ppa:webupd8team/sublime-text-3
+sudo apt-get update
+sudo apt-get install sublime-text-installer
+```
+
+Add package manager as per https://sublime.wbond.net/installation
+
+Then `Ctrl+Shift+P` to bring up the command pallette and then Select "Package Control: Install Package" to get these useful packages:
+
+- SublimeLinter
+- SideBarEnhancements
+- SublimeCodeIntel
+- BracketHighlighter
+- DocBlockr
+- SublimeGDB
+
+For SublimeLinter in Sublime Text 3 [you have to](http://harrywolff.com/upgrading-to-sublime-text-3/)...
+
+```sh
+cd ~/.config/sublime-text-3/Packages
+git clone https://github.com/SublimeLinter/SublimeLinter.git
+cd SublimeLinter
+git checkout sublime-text-3
+```
 
 ### Install WINE and Microsoft Office
+
+Because many of my collegues use Office and LibreOffice doesn't always play nice.
+
+```sh
+sudo apt-get install wine
+```
+
+Put in the Office CD-ROM and install the applications required.
+
 
 
 
