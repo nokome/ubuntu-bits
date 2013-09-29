@@ -86,15 +86,39 @@ PMMethod=none
 
 ### Run `xrandr`, `optirun` and `screenclone` to get triple monitors
 
-@todo cvrt Modeline thing
-@todo Put into a script
+Unfortuately I found that choosing the expected 1920x1080 mode for the
+HDMI monitor caused only half the screen to show : the right side of the 
+screen was on the left side of the monitor and the remainder of the screen 
+was off the monitor to the left. I got the same result on three separate monitors
+regardless of whether I was using a straight HDMI to HDMI cable or a HDMI to DVI cable to
+connect the NVida HDMI output to the monitor.
+
+I tried various things to fix this but the only solution I found was to make the VITUAL
+screen very wide so it filled the entire monitor and make it the left most screen so that the
+screen real estate that was unseen (because it was off to the far left) didn't confuse inter-monitor
+navigation. It's hopefully just a temporary hack:
 
 ```sh
+# Create a mode for an extra wide VIRTUAL screen
+modeline=`cvt 2980 1080 | sed "1d" | sed 's/Modeline //'`
+modename=`echo $modeline | sed 's/ .*//'`
+# Create the mode (ignoring xrandr error if the mode is already there)
+xrandr --newmode $modeline &> /dev/null 2>&1
+# Add the mode to VIRTUAL
+xrandr --addmode VIRTUAL $mode
+
+# Configure screen size and placements
+# Note that on the XPS L502X, HDMI1 is actually the DisplayPort output and
+# VIRTUAL is the HDMI output
 xrandr --output LVDS1 --auto \
        --output HDMI1 --mode 1920x1080 --right-of LVDS1 \
-       --output VIRTUAL --mode 2980x1080 --right-of HDMI1
+       --output VIRTUAL --mode $modename --right-of HDMI1
+       
+# Run screen clone using the Bumblebee client `optirun`
 optirun screenclone -d :8 -x 2
 ```
+
+The above commands are in a script []() which I can run everytime I want triple monitors
 
 ### Hold `xserver-xorg-video-intel`
 
