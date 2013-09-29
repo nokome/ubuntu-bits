@@ -125,7 +125,16 @@ xrandr --fb 6229x1080 \
 optirun screenclone -d :8 -x 2
 ```
 
-The above commands are in a script []() which I can run everytime I want triple monitors
+The above commands are in a [script](optimus-triple-monitor.sh) which I can run everytime I want triple monitors.
+
+Having a large part of the screen which is not visible is certaintly not ideal.
+The main pain is that windows occaisionally get opened up off screen. To move them into the visisble
+space use [this technique](http://blog.vogella.com/2013/06/02/ubuntu-how-to-move-an-application-which-is-displayed-offscreen/):
+
+- `ALT+TAB` to switch to the off-screen application
+- `ALT+SPACE` to show the window menu (it may not be visible but you still can call its options)
+- `M` to select the “Move” menu
+- Use the mouse or the arrow keys to move the application into the visible area
 
 ### Hold `xserver-xorg-video-intel`
 
