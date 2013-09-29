@@ -4,10 +4,13 @@ These are my personal notes for setting up three monitors, the laptop's builtin
 screen and two external monitors, for my Dell XPS L502X laptop.
 This can be done by taking advantage of the two builtin video cards using 
 Nvidia Optimus technology via [Bumblebee](http://bumblebee-project.org/) and
-[hybrid-screenclone](https://github.com/liskin/hybrid-screenclone)
+[hybrid-screenclone](https://github.com/liskin/hybrid-screenclone).
 
-The best guide's I found for this were [Sagar's](http://sagark.org/optimal-ubuntu-graphics-setup-for-thinkpads/) 
-and [Gordin's](http://blog.gordin.de/post/optimus-guide). Thanks! 
+If you are happy with just one external monitor on the L502X just get a mini-DisplayPort to HDM/DVI/VGA
+cable. It is a lot easier, and less flaky, than getting all three!
+
+The guides from [Sagar's](http://sagark.org/optimal-ubuntu-graphics-setup-for-thinkpads/) 
+and [Gordin's](http://blog.gordin.de/post/optimus-guide) are very useful.
 Below I mostly repeat their instructions with any minor modifications that I had to make.
 
 ### Install Bumblebee
@@ -108,7 +111,7 @@ xrandr --newmode $modeline &> /dev/null 2>&1
 xrandr --addmode VIRTUAL $modename
 
 # Configure screen size and placements
-# Note that on the XPS L502X, HDMI1 is actually the DisplayPort output and
+# Note that on the Dell XPS L502X, HDMI1 is actually the DisplayPort output and
 # VIRTUAL is the HDMI output
 xrandr --output LVDS1 --auto \
        --output HDMI1 --mode 1920x1080 --left-of LVDS1 \
