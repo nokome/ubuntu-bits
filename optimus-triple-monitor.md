@@ -113,7 +113,7 @@ xrandr --addmode VIRTUAL $modename
 # Configure screen size and placements
 # Note that on the Dell XPS L502X, HDMI1 is actually the DisplayPort output and
 # VIRTUAL is the HDMI output
-xrandr --fb 6229x1080
+xrandr --fb 6229x1080 \
        --output VIRTUAL --mode $modename --pos 0x0 \
        --output HDMI1 --mode 1920x1080 --pos 2944x0 \
        --output LVDS1 --mode 1366x768 --pos 4864x312
