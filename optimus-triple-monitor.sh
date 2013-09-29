@@ -1,3 +1,5 @@
+#!/bin/sh
+
 # Create a mode for an extra wide VIRTUAL screen
 # I arrived at 2944 width purely through trial and error
 modeline=`cvt 2944 1080 | sed "1d" | sed 's/Modeline //'`
