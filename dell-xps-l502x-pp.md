@@ -181,5 +181,12 @@ WINEARCH=win32 WINEPREFIX=/home/nbentley/.wine32 wine /media/OFFICE12/setup.exe
 See the "Post Installation Instructions" at http://appdb.winehq.org/objectManager.php?sClass=version&iId=4992
 
 
+### Fix touch pad
 
+Some where along the way my [touch pad stopped working](http://askubuntu.com/questions/262287/synaptic-touchpad-on-laptop-not-working)
+
+```sh
+sudo nano /etc/modprobe.d/psmouse.conf
+options psmouse proto=imps
+```
 
