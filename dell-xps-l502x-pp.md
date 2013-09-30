@@ -51,13 +51,18 @@ sudo apt-get install indicator-sensors
 
 Go to the HUD and launch sensors and then check preference to autostart.
 
-### Install password storage
+### Install fish shell
 
-Because these days, without passwords, you can't do much...
+Because life is too short to be using monochrome command shells with no autosuggestions
 
 ```sh
-sudo apt-get install keepassx 
+cd ~/Downloads
+wget http://fishshell.com/files/2.0.0/linux/Debian_6.0/i586/fish_2.0.0-201305151006_i386.deb
+sudo dpkg -i fish_2.0.0-201305151006_i386.deb
 ```
+
+In Gnome Terminal right click and go to `Profile>Profile Preference` and set `fish` as the starting command.
+Run `fish_config` to set colour and prompt preferences.
 
 ### Install Last.fm palyer
 
@@ -67,6 +72,14 @@ Because I like listening to music while I work...
 sudo add-apt-repository "deb http://apt.last.fm/debian precise main"
 sudo apt-get update
 sudo apt-get install lastfm-scrobbler
+```
+
+### Install password storage
+
+Because these days, without passwords, you can't do much...
+
+```sh
+sudo apt-get install keepassx 
 ```
 
 ### Install Sublime Text
@@ -97,6 +110,14 @@ cd ~/.config/sublime-text-3/Packages
 git clone https://github.com/SublimeLinter/SublimeLinter.git
 cd SublimeLinter
 git checkout sublime-text-3
+```
+
+### Install Python PIP
+
+Because every language needs a good package manager
+
+```sh
+sudo apt-get install python-pip
 ```
 
 ### Install WINE and Microsoft Office 2007
