@@ -28,13 +28,6 @@ sudo apt-get install nautilus-open-terminal
 nautilus -q
 ```
 
-### Install Chrome
-
-Because its clean and fast...
-
-Download and run the deb file at https://www.google.com/intl/en/chrome/browser/
-
-
 ### Install system monitoring tools
 
 Because it's good to see where your computer is at...
@@ -64,6 +57,20 @@ sudo dpkg -i fish_2.0.0-201305151006_i386.deb
 In Gnome Terminal right click and go to `Profile>Profile Preference` and set `fish` as the starting command.
 Run `fish_config` to set colour and prompt preferences.
 
+### Install password storage
+
+Because these days, without passwords, you can't do much...
+
+```sh
+sudo apt-get install keepassx 
+```
+
+### Install Chrome
+
+Because its clean and fast...
+
+Download and run the deb file at https://www.google.com/intl/en/chrome/browser/
+
 ### Install Last.fm palyer
 
 Because I like listening to music while I work...
@@ -74,12 +81,10 @@ sudo apt-get update
 sudo apt-get install lastfm-scrobbler
 ```
 
-### Install password storage
-
-Because these days, without passwords, you can't do much...
+There is a bug in the laucher fix it with this...
 
 ```sh
-sudo apt-get install keepassx 
+sudo sed -i 's/Exec=\/usr\/bin\/lastfm-client/Exec=\/usr\/bin\/lastfm-scrobbler/g' /usr/share/applications/lastfm-client.desktop
 ```
 
 ### Install Sublime Text
@@ -114,15 +119,35 @@ git checkout sublime-text-3
 
 ### Install Python PIP
 
-Because every language needs a good package manager
+Because every language needs a good package manager...
 
 ```sh
 sudo apt-get install python-pip
 ```
 
+### Install R and RStudio
+
+Because if you are doing anything with data...
+
+```sh
+sudo add-apt-repository "deb http://cran.stat.auckland.ac.nz/bin/linux/ubuntu precise/"
+sudo apt-get update
+sudo apt-get install r-base r-base-dev
+```
+
+### Install Skype
+
+Because we talk...
+
+```sh
+sudo apt-add-repository "deb http://archive.canonical.com/ precise partner"
+sudo apt-get update
+sudo apt-get install skype
+```
+
 ### Install WINE and Microsoft Office 2007
 
-Because many of my collegues use Office and LibreOffice doesn't always play nice, particularly with formatting
+Because a lot of the world still uses MS Office and LibreOffice doesn't always play nice, particularly with formatting
 
 ```sh
 sudo apt-get install wine
