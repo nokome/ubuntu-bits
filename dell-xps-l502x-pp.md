@@ -117,6 +117,19 @@ cd SublimeLinter
 git checkout sublime-text-3
 ```
 
+### Install gcc-4.8 & g++-4.8
+
+Because its really nice to have all those [C++11 features](http://gcc.gnu.org/gcc-4.8/cxx0x_status.html)[...](http://askubuntu.com/questions/271388/how-to-install-gcc-4-8-in-ubuntu-12-04-from-the-terminal)
+
+```sh
+sudo add-apt-repository ppa:ubuntu-toolchain-r/test
+sudo apt-get update
+sudo apt-get install gcc-4.8 g++-4.8
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.8 50
+sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.8 50
+```
+
+
 ### Install Python PIP
 
 Because every language needs a good package manager...
