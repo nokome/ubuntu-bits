@@ -135,6 +135,12 @@ sudo apt-get update
 sudo apt-get install r-base r-base-dev
 ```
 
+```sh
+cd ~/Downloads
+wget http://download1.rstudio.org/rstudio-0.97.551-amd64.deb
+sudo dpkg -i rstudio-0.97.551-amd64.deb
+```
+
 ### Install Skype
 
 Because we talk...
