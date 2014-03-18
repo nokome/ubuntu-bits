@@ -1,7 +1,7 @@
 ## Ubuntu Precise Pangolin (12.04.3) on a Dell XPS L502X
 
-These are my notes for my personal setup. Your preferences may differ.
-A useful guide is for this setup is available [here](http://hanynowsky.wordpress.com/2012/04/07/dell-xps-15-l502x-ubuntu-linux/)
+These are just my notes for my personal setup on the Dell XPS L502X.
+[This post](http://hanynowsky.wordpress.com/2012/04/07/dell-xps-15-l502x-ubuntu-linux/) is a useful guide is for this combination of operating system and hardware.
 
 ### Install Ubuntu
 
@@ -13,7 +13,7 @@ Install Ubuntu 12.04.3 64 bit ISO from a [bootable USB stick](http://www.ubuntu.
 
 ### Setup triple monitors
 
-An important aspect for me in this setup was to have a three monitors, the laptop's builtin screee and two external monitors.
+An important aspect for me in this setup was to have a three monitors, the laptop's builtin screen and two external monitors.
 This can be done on the L502X using the two video cards and the Nvidia Optimus technology via Bumblebee.
 
 See my separate [guide](optimus-triple-monitor.md) for this.
@@ -21,7 +21,9 @@ See my separate [guide](optimus-triple-monitor.md) for this.
 
 ### Customize Nautilus
 
-`Edit > Preferences` ...
+Set up Nautilus preferences : `Edit > Preferences` ...
+
+For the convienience of opening a terminal from Nautilus:
 
 ```sh
 sudo apt-get install nautilus-open-terminal
@@ -193,7 +195,8 @@ See the "Post Installation Instructions" at http://appdb.winehq.org/objectManage
 
 ### Fix touch pad
 
-Some where along the way my [touch pad stopped working](http://askubuntu.com/questions/262287/synaptic-touchpad-on-laptop-not-working)
+Some where along the way my [touch pad stopped working](http://askubuntu.com/questions/262287/synaptic-touchpad-on-laptop-not-working).
+This fixes it (sort of...):
 
 ```sh
 sudo nano /etc/modprobe.d/psmouse.conf
