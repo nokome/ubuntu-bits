@@ -129,6 +129,16 @@ sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.8 50
 sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.8 50
 ```
 
+You also need to upgrade GDB to a more recent version so it recognises the debug symbols from gcc-4.8:
+
+```sh
+wget http://ftp.gnu.org/gnu/gdb/gdb-7.7.tar.gz
+tar xfv gdb-7.7.tar.gz
+cd gdb-7.7
+./configure
+make
+sudo make install
+```
 
 ### Install Python PIP
 
